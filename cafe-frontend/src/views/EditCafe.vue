@@ -1,6 +1,6 @@
 <template>
     <div class="container mt-4">
-        <h2>Editar Café {{ form.nome }}:</h2>
+        <h2>Editar Cafeteria {{ form.id }}:</h2>
         <b-form @submit.prevent="updateCafe">
             <b-form-input v-model="form.nome" class="mb-2" maxlength="255" required />
             <b-form-input v-model="form.data_inauguracao" type="date" class="mb-2" :max="new Date().toLocaleDateString('sv-SE')" required />

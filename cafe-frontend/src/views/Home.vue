@@ -3,7 +3,7 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1>Cafés de Paris</h1>
             <div>
-                <router-link to="/add" class="btn btn-success">Adicionar Café</router-link>
+                <router-link to="/add" class="btn btn-success">Adicionar Cafeteria</router-link>
             </div>
         </div>
         <button class="btn btn-sm btn-info me-2 mb-2" @click="toggleOrdenacao">
