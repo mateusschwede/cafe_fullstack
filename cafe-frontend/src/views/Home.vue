@@ -14,40 +14,42 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import api from '../services/api'
-import CafeItem from '../components/CafeItem.vue'
+import { ref, onMounted } from 'vue';
+import api from '../services/api';
+import CafeItem from '../components/CafeItem.vue';
 
-const cafes = ref<any[]>([])
-const cafesOriginais = ref<any[]>([])
-const ordenado = ref(false)
+const cafes = ref<any>([]);
+const cafesOriginais = ref<any>([]);
+const ordenado = ref(false);
 
 const fetchCafes = async () => {
-    const { data } = await api.get('cafeterias/')
-    cafesOriginais.value = [...data]
-    cafes.value = [...data]
-}
+    const { data } = await api.get('cafes/');
+    cafesOriginais.value = [...data];
+    cafes.value = [...data];
+};
 
 const deleteCafe = async (id: number) => {
-    await api.delete(`cafeterias/${id}/`)
-    await fetchCafes()
+    await api.delete(`cafes/${id}/`);
+    await fetchCafes();
     if (ordenado.value) {
-        ordenarPorAvaliacao()
+        ordenarPorAvaliacao();
     }
-}
+};
 
 const ordenarPorAvaliacao = () => {
-    cafes.value = [...cafes.value].sort((a, b) => b.avaliacao - a.avaliacao)
-}
+    cafes.value = [...cafes.value].sort((a, b) => b.avaliacao - a.avaliacao);
+};
 
 const toggleOrdenacao = () => {
     if (!ordenado.value) {
-        ordenarPorAvaliacao()
+        ordenarPorAvaliacao();
     } else {
-        cafes.value = [...cafesOriginais.value]
+        cafes.value = [...cafesOriginais.value];
     }
-    ordenado.value = !ordenado.value
-}
+    ordenado.value = !ordenado.value;
+};
 
-onMounted(fetchCafes)
+onMounted(fetchCafes);
 </script>
+
+<style></style>

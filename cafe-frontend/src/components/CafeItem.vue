@@ -8,13 +8,15 @@
             <div>
                 <router-link :to="`/view/${cafe.id}`" class="btn btn-sm btn-primary me-1">Ver</router-link>
                 <router-link :to="`/edit/${cafe.id}`" class="btn btn-sm btn-warning me-1">Editar</router-link>
-                <b-button size="sm" variant="danger" @click="$emit('delete', cafe.id)">Deletar</b-button>
+                <b-button variant="danger" size="sm" @click="$emit('delete', cafe.id)">Deletar</b-button>
             </div>
         </div>
     </b-card>
 </template>
 
 <script setup lang="ts">
-defineProps<{ cafe: any }>()
-defineEmits(['delete'])
+defineProps<{ cafe: any }>();
+defineEmits(['delete']);
 </script>
+
+<style></style>

@@ -1,6 +1,5 @@
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -8,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c==__0oz(gym)-n-lw0y&of%pb!qu^zqp0jq36q#*)32b6g8iv'
+SECRET_KEY = 'django-insecure-6e%ac0(#hgtp1n%8w%*b7k8**jahn*^(i_r1^)f)wy7r=$8-a4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,15 +29,6 @@ INSTALLED_APPS = [
     'cafes',
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',
-    ],
-    'DEFAULT_PARSER_CLASSES': [
-        'rest_framework.parsers.JSONParser',
-    ]
-}
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -50,12 +40,21 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ],
+}
+
 CORS_ALLOW_ALL_ORIGINS = True
 # CORS_ALLOWED_ORIGINS = [
-#    "http://localhost:8080",
-# ]
+#    'http://localhost:3000',
+#]
 
-ROOT_URLCONF = 'paris_cafes.urls'
+ROOT_URLCONF = 'paris_cafe.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'paris_cafes.wsgi.application'
+WSGI_APPLICATION = 'paris_cafe.wsgi.application'
 
 
 # Database
