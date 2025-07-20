@@ -33,7 +33,6 @@ describe('ViewCafe.vue', () => {
         })
 
         await new Promise(resolve => setTimeout(resolve, 0))
-
         expect(wrapper.text()).toContain('Café de Flore')
         expect(wrapper.text()).toContain('1887')
         expect(wrapper.text()).toContain('172 Boulevard Saint-Germain')

@@ -10,17 +10,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
-import api from '../services/api';
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import api from '../services/api'
 
-const cafe = ref<any>(null);
-const route = useRoute();
+const cafe = ref<any>(null)
+const route = useRoute()
 
 onMounted(async () => {
-    const { data } = await api.get(`cafes/${route.params.id}/`);
-    cafe.value = data;
-});
+    const { data } = await api.get(`cafes/${route.params.id}/`)
+    cafe.value = data
+})
 </script>
-
-<style></style>
